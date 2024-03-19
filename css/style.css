@@ -1,0 +1,2714 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 0rem;
+}
+
+/* body{
+ background-image: url(/Images/gojo\ wallpaper.jpg);
+ background-repeat: no-repeat;
+    background-size: 100% 100%;
+} */
+
+body{
+  min-height: 100vh;
+}
+
+
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 70px;
+    background: black;
+    opacity: 80%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+  }
+  
+  nav .navbar{
+    height: 100%;
+    max-width: 1250px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    opacity: 100%;
+    padding: 0 0px;
+  }
+  
+  .navbar .logo{
+    font-size: 30px;
+    color: darkorange;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .navbar .logo a{
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  nav .navbar .nav-links{
+    line-height: 70px;
+    height: 100%;
+  }
+  nav .navbar .links{
+    display: flex;
+  
+  }
+  nav .navbar .links li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0 14px;
+  }
+  nav .navbar .links li a{
+    height: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .links li:hover{
+    color: black;
+  }
+  .links li:hover .htmlcss-arrow,
+  .links li:hover .js-arrow{
+    transform: rotate(180deg);
+    }
+  
+  nav .navbar .links li .arrow{
+    /* background: red; */
+    height: 100%;
+    width: 22px;
+    line-height: 70px;
+    text-align: center;
+    display: inline-block;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  nav .navbar .links li .sub-menu{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    line-height: 30px;
+    background: black;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px;
+    display: none;
+    z-index: 2;
+    
+  }
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu{
+    display: block;
+  }
+  .navbar .links li .sub-menu li{
+    padding: 0 22px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .navbar .links li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .navbar .links li .sub-menu .more-arrow{
+    line-height: 40px;
+  }
+  /* .navbar .links li .htmlCss-more-sub-menu{
+    line-height: 40px;
+  } */
+  .navbar .links li .sub-menu .more-sub-menu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 120px;
+    height: 20rem;
+    border-radius: 0 4px 4px 4px;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+  }
+  .links li .sub-menu .more:hover .more-sub-menu{
+    display: block;
+  }
+  .navbar .search-box{
+    position: relative;
+     height: 40px;
+    width: 40px;
+  }
+  .navbar .search-box i{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .navbar .search-box .input-box{
+    position: absolute;
+    right: calc(100% - 40px);
+    top: 80px;
+    height: 60px;
+    width: 350px;
+    background: black;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+  .navbar.showInput .search-box .input-box{
+    top: 65px;
+    opacity: 1;
+    pointer-events: auto;
+    background: black;
+  }
+  .search-box .input-box::before{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: black;
+    right: 10px;
+    top: -6px;
+    transform: rotate(45deg);
+  }
+  .search-box .input-box input{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 280px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .search-box .input-box  .submit{
+    position: absolute;
+    top: 50%;
+    left: 91%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 38px;
+    outline: none;
+    padding: 0 15px;
+    border: none;
+    background-color: darkorange;
+    cursor: pointer;
+  }
+  
+  .search-box .input-box  .submit:hover{
+    position: absolute;
+    top: 50%;
+    left: 91%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 38px;
+    outline: none;
+    padding: 0 15px;
+    border: none;
+    background-color: rgb(0, 204, 255);
+    cursor: pointer;
+  }
+  
+  .search-box .input-box  .submit i{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    
+    height: 35px;
+    width: 38px;
+  
+  }
+  
+  
+  .search .search-action {
+      background-color: #ff3d00;
+      font-family: inherit;
+      font-size: 14px;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0 12px;
+      margin: 0;
+      border: 0;
+      border: 1px solid rgba(0,0,0,.1);
+      border-bottom-width: 2px;
+      border-radius: 2px;
+  }
+  
+  .navbar .nav-links .sidebar-logo{
+    display: none;
+  }
+  
+  .navbar .bx-menu{
+    display: none;
+  }
+
+  /* header css ends here */
+
+  /* home section css starts here */
+  .home{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Home/home4.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    opacity: 100%;
+    
+   
+}
+  .con{
+    padding-top: 200px;
+    margin-left: 100px;
+  }
+
+  .hi{
+    font-size: 50px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 50px;
+  }
+
+  .wel{
+    font-size: 40px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn{
+    display: inline-block;
+    margin-top: 39px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* home section css ends here */
+
+  /* w3allpaper css starts here */
+
+  .Walp{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Walp/wallpaper.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con1{
+    padding-top: 200px;
+    margin-left: 700px;
+    
+  }
+
+  .hi1{
+    font-size: 50px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 50px;
+  }
+
+  .wel1{
+    font-size: 40px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn1{
+    display: inline-block;
+    margin-top: 39px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn1:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* wallpaper css ends here */
+
+  /* Genere css starts here */
+  .gene{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Genre/genre2.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con2{
+    padding-top: 200px;
+    margin-left: 100px;
+  }
+  /* Genere css ends here */
+
+  /* about css starts here */
+  .abut{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/About/about4.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con3{
+    padding-top: 85px;
+    margin-left: 700px;
+    
+  }
+
+  .wel2{
+    font-size: 30px;
+    color: white;
+    margin-left: -14px;
+  }
+  /* about css ends here */
+
+  /* media quaries starts here */
+  @media (max-width:1049px){
+    /* home section css starts here */
+  .home{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Home/home2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    opacity: 100%;
+    
+   
+}
+  .con{
+    padding-top: 74px;
+    margin-left: 250px;
+  }
+
+  .hi{
+    font-size: 34px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 35px;
+  }
+
+  .wel{
+    font-size: 32px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn{
+    display: inline-block;
+    margin-top: 17px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* home section css ends here */
+
+  /* w3allpaper css starts here */
+
+  .Walp{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Walp/walp2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con1{
+    padding-top: 85px;
+    margin-left: 256px;
+    
+  }
+
+  .hi1{
+    font-size: 35px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 35px;
+  }
+
+  .wel1{
+    font-size: 32px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn1{
+    display: inline-block;
+    margin-top: 19px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn1:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* wallpaper css ends here */
+
+  /* Genere css starts here */
+  .gene{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Genre/genre2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con2{
+    padding-top: 74px;
+    margin-left: 265px;
+  }
+  /* Genere css ends here */
+
+  /* about css starts here */
+  .abut{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/About/about2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con3 {
+    padding-top: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 1px;
+    text-align: center;
+}
+
+  .wel2{
+    font-size: 28px;
+    color: white;
+    margin-left: -14px;
+  }
+  /* about css ends here */
+
+  }
+
+  @media (max-width:799px){
+    /* home section css starts here */
+  .home{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Home/home2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    opacity: 100%;
+    
+   
+}
+  .con{
+    padding-top: 74px;
+    margin-left: 205px;
+  }
+
+  .hi{
+    font-size: 34px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 35px;
+  }
+
+  .wel{
+    font-size: 32px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn{
+    display: inline-block;
+    margin-top: 17px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* home section css ends here */
+
+  /* w3allpaper css starts here */
+
+  .Walp{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Walp/walp2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con1{
+    padding-top: 85px;
+    margin-left: 230px;
+    
+  }
+
+  .hi1{
+    font-size: 35px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 35px;
+  }
+
+  .wel1{
+    font-size: 32px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn1{
+    display: inline-block;
+    margin-top: 19px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn1:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* wallpaper css ends here */
+
+  /* Genere css starts here */
+  .gene{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Genre/genre2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con2{
+    padding-top: 74px;
+    margin-left: 220px;
+  }
+  /* Genere css ends here */
+
+  /* about css starts here */
+  .abut{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/About/about2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con3 {
+    padding-top: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 1px;
+    text-align: center;
+}
+
+  .wel2{
+    font-size: 25px;
+    color: white;
+    margin-left: -14px;
+  }
+  /* about css ends here */
+
+  }
+
+  @media (max-width:670px){
+    /* home section css starts here */
+  .home{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Home/home2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    opacity: 100%;
+    
+   
+}
+  .con{
+    padding-top: 74px;
+    margin-left: 140px;
+  }
+
+  .hi{
+    font-size: 34px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 35px;
+  }
+
+  .wel{
+    font-size: 32px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn{
+    display: inline-block;
+    margin-top: 17px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* home section css ends here */
+
+  /* w3allpaper css starts here */
+
+  .Walp{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Walp/walp2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con1{
+    padding-top: 85px;
+    margin-left: 130px;
+    
+  }
+
+  .hi1{
+    font-size: 35px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 35px;
+  }
+
+  .wel1{
+    font-size: 32px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn1{
+    display: inline-block;
+    margin-top: 19px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn1:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* wallpaper css ends here */
+
+  /* Genere css starts here */
+  .gene{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Genre/genre2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con2{
+    padding-top: 74px;
+    margin-left: 155px;
+  }
+  /* Genere css ends here */
+
+  /* about css starts here */
+  .abut{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/About/about2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con3 {
+    padding-top: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 1px;
+    text-align: center;
+}
+
+  .wel2{
+    font-size: 25px;
+    color: white;
+    margin-left: -14px;
+  }
+  /* about css ends here */
+
+  }
+
+  @media (max-width:570px){
+    /* home section css starts here */
+  .home{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Home/home2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    opacity: 100%;
+    
+   
+}
+  .con{
+    padding-top: 74px;
+    margin-left: 115px;
+  }
+
+  .hi{
+    font-size: 33px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 33px;
+  }
+
+  .wel{
+    font-size: 28px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn{
+    display: inline-block;
+    margin-top: 17px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* home section css ends here */
+
+  /* w3allpaper css starts here */
+
+  .Walp{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Walp/walp2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con1{
+    padding-top: 120px;
+    margin-left: 110px;
+    
+  }
+
+  .hi1{
+    font-size: 30px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 30px;
+  }
+
+  .wel1{
+    font-size: 27px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn1{
+    display: inline-block;
+    margin-top: 19px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn1:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* wallpaper css ends here */
+
+  /* Genere css starts here */
+  .gene{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Genre/genre2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con2{
+    padding-top: 74px;
+    margin-left: 115px;
+  }
+  /* Genere css ends here */
+
+  /* about css starts here */
+  .abut{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/About/about2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con3 {
+    padding-top: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 1px;
+    text-align: center;
+}
+
+  .wel2{
+    font-size: 25px;
+    color: white;
+    margin-left: -14px;
+  }
+  /* about css ends here */
+
+  }
+
+  @media (max-width:485px){
+    /* home section css starts here */
+  .home{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Home/home2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    opacity: 100%;
+    
+   
+}
+  .con{
+    padding-top: 85px;
+    margin-left: 80px;
+  }
+
+  .hi{
+    font-size: 33px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 33px;
+  }
+
+  .wel{
+    font-size: 28px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn{
+    display: inline-block;
+    margin-top: 17px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* home section css ends here */
+
+  /* w3allpaper css starts here */
+
+  .Walp{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Walp/walp2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con1{
+    padding-top: 120px;
+    margin-left: 75px;
+    
+  }
+
+  .hi1{
+    font-size: 30px;
+    color: white;
+  
+  }
+
+  h3{
+    color: darkorange;
+    font-size: 30px;
+  }
+
+  .wel1{
+    font-size: 27px;
+    color: white;
+    margin-left: -14px;
+  }
+
+  .btn1{
+    display: inline-block;
+    margin-top: 19px;
+    padding:.4rem;
+    background: linear-gradient(rgba(255, 166, 0, 0.966), rgb(236, 10, 10));
+    color:white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn1:hover{
+  background:white;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+  /* wallpaper css ends here */
+
+  /* Genere css starts here */
+  .gene{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/Genre/genre2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con2{
+    padding-top: 74px;
+    margin-left: 80px;
+  }
+  /* Genere css ends here */
+
+  /* about css starts here */
+  .abut{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/home/About/about2-1000.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+  }
+
+  .con3 {
+    padding-top: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 1px;
+    text-align: center;
+}
+
+  .wel2{
+    font-size: 20px;
+    color: white;
+    margin-left: -14px;
+  }
+  /* about css ends here */
+
+  }
+
+   /* media quaries ends here */
+  
+
+  /* jujutsu css start here */
+
+  .para{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/jujutsu/gojo\ wallpaper.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+    margin-top: 70px;
+}
+
+img{
+    padding-top: 50px;
+    margin-left: 25px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+}
+
+
+
+#link{
+  
+    margin-left: 25px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+}
+
+.info{
+  font-size: 100%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+   
+  padding-left: 20px;
+  height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/Demon\ Slayer/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/MHA/trio\ MHA.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/One\ Punch\ Man/opm-team.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.para4{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/Death\ Note/DeathN.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.para5{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/Parasyte/p3.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+.para6{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/horemiya/hori1.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* media quaries of my project 2  */
+
+@media (max-width:1100px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 75%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+}
+
+@media (max-width:1000px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 73%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+}
+
+@media (max-width:900px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 72%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+}
+
+@media (max-width:800px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 68%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+  
+
+  
+
+  
+}
+
+@media (max-width:768px){
+
+  header .icons #menu-bars{
+      display: inline-block;
+  }
+
+  header .navbar{
+      position: absolute;
+      left:0; right:0; top:100%;
+      background:#f7f7f7;
+      border-top: .1rem solid #333;
+      border-bottom: .1rem solid #333;
+      transition: .2s linear;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a{
+      display: block;
+      padding:1.5rem;
+      margin:1.5rem;
+      background:#fff;
+      border:.1rem solid #333;
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+      border-radius: .5rem;
+  }
+
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 70%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+}
+
+@media (max-width:700px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 65%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+  
+
+  
+
+  
+}
+
+@media (max-width:570px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 58%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+  
+
+  
+
+  
+}
+
+@media (max-width:500px){
+  
+  img{
+    padding-top: 50px;
+    margin-left: 20px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+ }
+ 
+ 
+ 
+ #link{
+  
+    margin-left: 20px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+ }
+ 
+ .info{
+  font-size: 50%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+ }
+ 
+ 
+ 
+ /* blank p css start here */
+ 
+ p{
+   
+  padding-left: 20px;
+  height: 20px;
+ 
+ }
+
+  
+
+  
+
+  
+}
+
+@media screen and (max-width: 450px) {
+  /* jujutsu css start here */
+
+  .para{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/jujutsu/gojo\ wallpaper3.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+    margin-top: 70px;
+}
+
+img{
+    padding-top: 50px;
+    margin-left: 110px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+}
+
+
+
+#link{
+  
+    margin-left: 110px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+}
+
+.info{
+  font-size: 50%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+   
+  padding-left: 20px;
+  height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/Demon\ Slayer/Demon3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/MHA/trio\ MHA3.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/One\ Punch\ Man/opm-team3.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+ 
+}
+
+@media screen and (max-width: 395px) {
+   /* jujutsu css start here */
+
+   .para{
+    width: 100%;
+    height: 100vh;
+    /* background-color: aqua; */
+    background-image: url(../Images/jujutsu/gojo\ wallpaper3.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    opacity: 100%;
+    margin-top: 70px;
+}
+
+img{
+    padding-top: 50px;
+    margin-left: 72px;
+    align-items: center;
+    width: 225px;
+    height: 380px;
+    text-align: center;
+}
+
+
+
+#link{
+  
+    margin-left: 72px;
+    /* align-items: center; */
+    width: 85px;
+    height: 25px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 4px;
+    border-color: #ff3d00;
+    cursor: pointer;
+}
+
+.info{
+  font-size: 48%;
+ margin-top: 4px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  background-color: #333;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 90%;
+ position: static;
+ padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+   
+  padding-left: 20px;
+  height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/Demon\ Slayer/Demon3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/MHA/trio\ MHA3.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+  width: 100%;
+  height: 100vh;
+  /* background-color: aqua; */
+  background-image: url(../Images/One\ Punch\ Man/opm-team3.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+}
+
+ 
+
+  
+
+  
+}
+
+@media screen and (max-width: 340px) {
+  /* jujutsu css start here */
+
+  .para{
+   width: 100%;
+   height: 100vh;
+   /* background-color: aqua; */
+   background-image: url(../Images/jujutsu/gojo\ wallpaper3.jpg) ;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   background-attachment: fixed;
+   opacity: 100%;
+   margin-top: 70px;
+}
+
+img{
+   padding-top: 50px;
+   margin-left: 55px;
+   align-items: center;
+   width: 225px;
+   height: 380px;
+   text-align: center;
+}
+
+
+
+#link{
+ 
+   margin-left: 55px;
+   /* align-items: center; */
+   width: 85px;
+   height: 25px;
+   text-align: center;
+   background-color: black;
+   color: #fff;
+   border-radius: 4px;
+   border-color: #ff3d00;
+   cursor: pointer;
+}
+
+.info{
+ font-size: 45%;
+margin-top: 4px;
+ margin-left: 20px;
+ margin-right: 20px;
+ color: white;
+ background-color: #333;
+ padding-left: 20px;
+ padding-right: 20px;
+ opacity: 90%;
+position: static;
+padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+  
+ padding-left: 20px;
+ height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/Demon\ Slayer/Demon3.jpg);
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/MHA/trio\ MHA3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/One\ Punch\ Man/opm-team3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+}
+
+@media screen and (max-width: 320px) {
+  /* jujutsu css start here */
+
+  .para{
+   width: 100%;
+   height: 100vh;
+   /* background-color: aqua; */
+   background-image: url(../Images/jujutsu/gojo\ wallpaper3.jpg) ;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   background-attachment: fixed;
+   opacity: 100%;
+   margin-top: 70px;
+}
+
+img{
+   padding-top: 50px;
+   margin-left: 49px;
+   align-items: center;
+   width: 225px;
+   height: 380px;
+   text-align: center;
+}
+
+
+
+#link{
+ 
+   margin-left: 49px;
+   /* align-items: center; */
+   width: 85px;
+   height: 25px;
+   text-align: center;
+   background-color: black;
+   color: #fff;
+   border-radius: 4px;
+   border-color: #ff3d00;
+   cursor: pointer;
+}
+
+.info{
+ font-size: 44%;
+margin-top: 4px;
+ margin-left: 20px;
+ margin-right: 20px;
+ color: white;
+ background-color: #333;
+ padding-left: 20px;
+ padding-right: 20px;
+ opacity: 90%;
+position: static;
+padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+  
+ padding-left: 20px;
+ height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/Demon\ Slayer/Demon3.jpg);
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/MHA/trio\ MHA3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/One\ Punch\ Man/opm-team3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+}
+
+@media screen and (max-width: 285px) {
+  /* jujutsu css start here */
+
+  .para{
+   width: 100%;
+   height: 100vh;
+   /* background-color: aqua; */
+   background-image: url(../Images/jujutsu/gojo\ wallpaper3.jpg) ;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   background-attachment: fixed;
+   opacity: 100%;
+   margin-top: 70px;
+}
+
+img{
+   padding-top: 50px;
+   margin-left: 30px;
+   align-items: center;
+   width: 225px;
+   height: 380px;
+   text-align: center;
+}
+
+
+
+#link{
+ 
+   margin-left: 30px;
+   /* align-items: center; */
+   width: 85px;
+   height: 25px;
+   text-align: center;
+   background-color: black;
+   color: #fff;
+   border-radius: 4px;
+   border-color: #ff3d00;
+   cursor: pointer;
+}
+
+.info{
+ font-size: 42%;
+margin-top: 4px;
+ margin-left: 20px;
+ margin-right: 20px;
+ color: white;
+ background-color: #333;
+ padding-left: 20px;
+ padding-right: 20px;
+ opacity: 90%;
+position: static;
+padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+  
+ padding-left: 20px;
+ height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/Demon\ Slayer/Demon3.jpg);
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/MHA/trio\ MHA3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/One\ Punch\ Man/opm-team3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+}
+
+@media screen and (max-width: 260px) {
+  /* jujutsu css start here */
+
+  .para{
+   width: 100%;
+   height: 100vh;
+   /* background-color: aqua; */
+   background-image: url(../Images/jujutsu/gojo\ wallpaper3.jpg) ;
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   background-attachment: fixed;
+   opacity: 100%;
+   margin-top: 70px;
+}
+
+img{
+   padding-top: 50px;
+   margin-left: 13px;
+   align-items: center;
+   width: 225px;
+   height: 380px;
+   text-align: center;
+}
+
+
+
+#link{
+ 
+   margin-left: 13px;
+   /* align-items: center; */
+   width: 85px;
+   height: 25px;
+   text-align: center;
+   background-color: black;
+   color: #fff;
+   border-radius: 4px;
+   border-color: #ff3d00;
+   cursor: pointer;
+}
+
+.info{
+ font-size: 35%;
+margin-top: 4px;
+ margin-left: 20px;
+ margin-right: 20px;
+ color: white;
+ background-color: #333;
+ padding-left: 20px;
+ padding-right: 20px;
+ opacity: 90%;
+position: static;
+padding-bottom: 8px;
+}
+
+
+
+/* blank p css start here */
+
+p{
+  
+ padding-left: 20px;
+ height: 20px;
+
+}
+
+/* demo slayer css */
+.para1{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/Demon\ Slayer/Demon3.jpg);
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+
+/* MHA css  */
+
+.para2{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/MHA/trio\ MHA3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+
+/* one punch man css */
+.para3{
+ width: 100%;
+ height: 100vh;
+ /* background-color: aqua; */
+ background-image: url(../Images/One\ Punch\ Man/opm-team3.jpg) ;
+ background-repeat: no-repeat;
+ background-size: 100% 100%;
+ background-attachment: fixed;
+}
+}
+
+
+/* my project css ends */
+
+/* media quaries */
+
+@media (max-width:920px) {
+  nav .navbar{
+    max-width: 100%;
+    padding: 0 25px;
+  }
+  .navbar .logo{
+    font-size: 20px;
+    color: darkorange;
+    text-decoration: none;
+    font-weight: 900;
+  }
+  nav .navbar .logo a{
+    font-size: 20px;
+    font-weight: 900;
+  }
+  nav .navbar .links li{
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  nav .navbar .links li a{
+    font-size: 15px;
+  }
+
+ 
+}
+
+
+@media (max-width:800px){
+  /* nav{
+    position: relative;
+  } */
+  .navbar .bx-menu{
+    display: block;
+  }
+  
+  nav .navbar .nav-links{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    max-width: 270px;
+    width: 100%;
+    background:  black;
+    line-height: 40px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    z-index: 1000;
+  }
+  .navbar .nav-links .sidebar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sidebar-logo .logo-name{
+    font-size: 25px;
+    color: #fff;
+  }
+    .sidebar-logo  i,
+    .navbar .bx-menu{
+      font-size: 25px;
+      color: #fff;
+    }
+  nav .navbar .links{
+    display: block;
+    margin-top: 20px;
+  }
+  nav .navbar .links li .arrow{
+    line-height: 40px;
+  }
+nav .navbar .links li{
+    display: block;
+  }
+nav .navbar .links li .sub-menu{
+  position: relative;
+  top: 0;
+  box-shadow: none;
+  display: none;
+}
+nav .navbar .links li .sub-menu li{
+  border-bottom: none;
+
+}
+.navbar .links li .sub-menu .more-sub-menu{
+  display: none;
+  position: relative;
+  left: 0;
+}
+.navbar .links li .sub-menu .more-sub-menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.links li:hover .htmlcss-arrow,
+.links li:hover .js-arrow{
+  transform: rotate(0deg);
+  }
+  .navbar .links li .sub-menu .more-sub-menu{
+    display: none;
+  }
+  .navbar .links li .sub-menu .more span{
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+  }
+
+  .links li .sub-menu .more:hover .more-sub-menu{
+    display: none;
+  }
+  nav .navbar .links li:hover .htmlCss-sub-menu,
+  nav .navbar .links li:hover .js-sub-menu{
+    display: none;
+  }
+.navbar .nav-links.show1 .links .htmlCss-sub-menu,
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu{
+      display: block;
+    }
+    .navbar .nav-links.show1 .links .htmlcss-arrow,
+    .navbar .nav-links.show3 .links .js-arrow{
+        transform: rotate(180deg);
+}
+    .navbar .nav-links.show2 .links .more-arrow{
+      transform: rotate(90deg);
+    }
+
+    
+}
+@media (max-width:370px){
+  nav .navbar .nav-links{
+  max-width: 100%;
+}
+.navbar .logo{
+  font-size: 17px;
+  color: darkorange;
+  text-decoration: none;
+  font-weight: 900;
+}
+nav .navbar .logo a{
+    font-size: 17px;
+    font-weight: 900;
+  }
+
+  .navbar .search-box .input-box{
+    position: absolute;
+    right: calc(100% - 40px);
+    top: 80px;
+    height: 60px;
+    width: 206px;
+    background: black;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .search-box .input-box input{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 185px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .search-box .input-box  .submit{
+    position: absolute;
+    top: 50%;
+    left: 89%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 14px;
+    outline: none;
+    padding: 0 15px;
+    border: none;
+    background-color: darkorange;
+    cursor: pointer;
+  }
+  
+  .search-box .input-box  .submit:hover{
+    position: absolute;
+    top: 50%;
+    left: 89%;
+    border-radius: 4px;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 14px;
+    outline: none;
+    padding: 0 15px;
+    border: none;
+    background-color: rgb(0, 204, 255);
+    cursor: pointer;
+  }
+  
+  .search-box .input-box  .submit i{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    
+    height: 35px;
+    width: 33px;
+  
+  }
+
+  
+
+
+}
+
+@media (max-width:1500px){
+ 
+
+.contact .row form .inputBox input{
+    width: 100%;
+}  
+ 
+.container{
+    grid-template-columns: 1fr;
+    padding: 2rem 50px;
+}
+
+.skill-icon{
+    width: 300px;
+
+}
+
+
+.box-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding:20px;
+}
+
+
+.box{
+    
+    border:.1rem solid rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    border-radius: .9rem;
+    overflow:hidden;
+    background: #fff;
+    flex:1 1 30rem;
+    
+}
+
+
+
+}
